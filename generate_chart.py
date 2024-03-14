@@ -1,10 +1,10 @@
 import matplotlib.pyplot as plt
 
 # Pie chart data
-labels = ['Apples', 'Bananas', 'Cherries', 'Dates', 'Mango']
-sizes = [15, 30, 30, 10, 15]
-colors = ['#ff9999','#66b3ff','#99ff99','#ffcc99', '#ffc3d']
-explode = (0.1, 0, 0, 0)  # explode the 1st slice (Apples)
+labels = ['Apples', 'Bananas', 'Cherries', 'Dates']
+sizes = [15, 30, 45, 10]
+colors = ['#ff9999','#66b3ff','#99ff99','#ffcc99']
+explode = (0.1, 0, 0, 0)  # Explode the 1st slice (Apples)
 
 # Create pie chart
 plt.figure(figsize=(10,7))
