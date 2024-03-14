@@ -1,22 +1,38 @@
-name: Python Hello World Workflow
+name: Python Workflows
 
 on: [push]
 
 jobs:
-  run_python_script:
+  run_hello_world_script:
     runs-on: ubuntu-latest
-    name: Run Python Script
+    name: Run Hello World Script
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.8'
-    - name: Install dependencies
-      run: |
-        # If you have dependencies, install them here
-        # pip install -r requirements.txt
-        echo "No dependencies to install"
-    - name: Run the script
-      run: python hello_world.py
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+      - name: Install dependencies for Hello World
+        run: |
+          # Install any dependencies required for the hello world script
+          echo "No dependencies to install for hello world script"
+      - name: Run the hello world script
+        run: python hello_world.py
+
+  generate_pie_chart:
+    runs-on: ubuntu-latest
+    name: Generate Pie Chart
+    needs: run_hello_world_script
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+      - name: Install dependencies for chart
+        run: |
+          pip install matplotlib
+      - name: Run the script to generate chart
+        run: python generate_chart.py
