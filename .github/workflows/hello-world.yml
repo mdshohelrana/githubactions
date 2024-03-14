@@ -1,4 +1,4 @@
-name: Python Workflows
+name: GitHub Actions Workflows
 
 on: [push]
 
